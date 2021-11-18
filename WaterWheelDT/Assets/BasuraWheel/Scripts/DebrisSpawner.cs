@@ -4,7 +4,6 @@ using System.Linq;
 using Microsoft.MixedReality.Toolkit;
 using Unity.VisualScripting;
 using UnityEditor;
-using UnityEditor.Experimental.TerrainAPI;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Pool;

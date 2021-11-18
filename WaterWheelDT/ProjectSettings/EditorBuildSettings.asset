@@ -4,8 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/BasuraWheel/Scenes/basuraWheelDT.unity
+    guid: c7822d5b1015c56439144d70e26841ee
   m_configObjects:
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: b7457fd2fc9b2c143aaab8cda3edfad1, type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: df2895859c6c881419d5f6453ea92bd7, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: e4442a4e6ddc9714590979251fd93b4d, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9f57a135e7819b3469e02373fea1739d, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: f181b98cb9441cd47ae9e59feac29bf8, type: 2}
