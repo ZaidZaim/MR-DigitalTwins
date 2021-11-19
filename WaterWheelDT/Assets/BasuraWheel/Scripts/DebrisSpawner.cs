@@ -26,7 +26,7 @@ namespace BasuraWaterWheel
 
         
         
-        void OnGUI()
+        /*void OnGUI()
         {
             GUIStyle guiStyle = new GUIStyle();
             guiStyle.normal.background = Texture2D.grayTexture;
@@ -70,7 +70,7 @@ namespace BasuraWaterWheel
             }
             GUILayout.EndVertical();
             GUILayout.EndHorizontal();
-        }
+        }*/
         
         
         
