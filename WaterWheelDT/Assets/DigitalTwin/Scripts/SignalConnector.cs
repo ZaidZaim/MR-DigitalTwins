@@ -6,16 +6,16 @@ using UnityEngine;
 using Microsoft.AspNetCore.SignalR.Client;
 
 public class SignalRConnector {
-    public Action<Message> OnMessageReceived;
+    public Action<Message> onBottleRecognized;
     private HubConnection connection;
     public async Task InitAsync() {
         connection = new HubConnectionBuilder()
-                .WithUrl("http://localhost:5000/chatHub")
+                .WithUrl("https://redi-digital-twin-demo-01.azurewebsites.net/api")
                 .Build();
-        connection.On<string, string>("ReceiveMessage", (user, message) => {
-            OnMessageReceived?.Invoke(new Message {
-                UserName = user,
-                Text = message,
+        connection.On<string, int>("onBottleRecognized", (user, count) => {
+            onBottleRecognized?.Invoke(new Message {
+                name = user,
+                count = count,
             });
         });
         await StartConnectionAsync();
@@ -23,7 +23,7 @@ public class SignalRConnector {
     public async Task SendMessageAsync(Message message) {
         try {
             await connection.InvokeAsync("SendMessage",
-                message.UserName, message.Text);
+                message.name, message.count);
         } catch (Exception ex) {
             UnityEngine.Debug.LogError($"Error {ex.Message}");
         }
@@ -37,6 +37,6 @@ public class SignalRConnector {
     }
 }
 public class Message {
-    public string UserName { get; set; }
-    public string Text { get; set; }
+    public string name { get; set; }
+    public int count { get; set; }
 }
