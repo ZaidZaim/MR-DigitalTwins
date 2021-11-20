@@ -3,40 +3,33 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 using Microsoft.AspNetCore.SignalR.Client;
 
-public class SignalRConnector {
-    public Action<Message> OnMessageReceived;
-    private HubConnection connection;
-    public async Task InitAsync() {
-        connection = new HubConnectionBuilder()
-                .WithUrl("http://localhost:5000/chatHub")
-                .Build();
-        connection.On<string, string>("ReceiveMessage", (user, message) => {
-            OnMessageReceived?.Invoke(new Message {
-                UserName = user,
-                Text = message,
-            });
+public class MainPage : MonoBehaviour {
+    public Text ReceivedText;
+    public InputField MessageInput;
+    public Button SendButton;
+    private SignalRConnector connector;
+    public async Task Start() {
+        connector = new SignalRConnector();
+        connector.OnMessageReceived += UpdateReceivedMessages;
+
+        await connector.InitAsync();
+        SendButton.onClick.AddListener(SendMessage);
+    }
+    private void UpdateReceivedMessages(Message newMessage) {
+        var lastMessages = this.ReceivedText.text;
+        if (string.IsNullOrEmpty(lastMessages) == false) {
+            lastMessages += "\n";
+        }
+        lastMessages += $"User:{newMessage.UserName} Message:{newMessage.Text}";
+        this.ReceivedText.text = lastMessages;
+    }
+    private async void SendMessage() {
+        await connector.SendMessageAsync(new Message {
+            UserName = "Example",
+            Text = MessageInput.text,
         });
-        await StartConnectionAsync();
     }
-    public async Task SendMessageAsync(Message message) {
-        try {
-            await connection.InvokeAsync("SendMessage",
-                message.UserName, message.Text);
-        } catch (Exception ex) {
-            UnityEngine.Debug.LogError($"Error {ex.Message}");
-        }
-    }
-    private async Task StartConnectionAsync() {
-        try {
-            await connection.StartAsync();
-        } catch (Exception ex) {
-            UnityEngine.Debug.LogError($"Error {ex.Message}");
-        }
-    }
-}
-public class Message {
-    public string UserName { get; set; }
-    public string Text { get; set; }
 }
