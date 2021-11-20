@@ -9,6 +9,7 @@ using DigitalTwin;
 public class SignalRConnector {
     public Action<Message> onBottleRecognized;
     private HubConnection connection;
+    [SerializeField] DataReceiver dataReceiver;
 
     public async Task InitAsync() {
         connection = new HubConnectionBuilder()
