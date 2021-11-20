@@ -24,7 +24,14 @@ namespace BasuraWaterWheel
         private float _period = 0.0f;
         private bool _initialized = false;
 
-        
+        public void CreateBottle(string bottleType) {
+            for (int i = 0; i < debrisPrefabs.Length; i++) {
+                if(debrisPrefabs[i].name == bottleType) {
+                    CreateDebris(i);
+                    break;
+                }
+            }
+        }
         
         void OnGUI()
         {
