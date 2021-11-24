@@ -1,0 +1,81 @@
+{
+  "@id": "dtmi:com:adt:redi:waterwheel;1",
+  "@type": "Interface",
+  "@context": "dtmi:dtdl:context;2",
+  "displayName": "Waterwheel",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "id",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "name",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "speed",
+      "schema": "integer"
+    },
+    {
+      "@type": "Property",
+      "name": "storage",
+      "writable": true,
+      "schema": {
+        "@type": "Map",
+        "mapKey": {
+          "name": "type",
+          "schema": "string"
+        },
+        "mapValue": {
+          "name": "count",
+          "schema": "integer"
+        }
+      }
+    },
+    {
+      "@type": "Property",
+      "name": "address",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "street",
+            "schema": "string"
+          },
+          {
+            "name": "city",
+            "schema": "string"
+          },
+          {
+            "name": "state",
+            "schema": "string"
+          },
+          {
+            "name": "zip",
+            "schema": "string"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Property",
+      "name": "coordinates",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "latitude",
+            "schema": "double"
+          },
+          {
+            "name": "longitude",
+            "schema": "double"
+          }
+        ]
+      }
+    }
+  ]
+}
