@@ -12,7 +12,11 @@ namespace DigitalTwin {
         public List<BottleItem> bottles;
 
         public event Action<string, int> onNewBottleRecognized;
-      
+
+        public void DataReceived(string message) {
+            onNewBottleRecognized?.Invoke(message, 1);
+        }
+
         [Button]
         public void FakeEventCoke() {
             onNewBottleRecognized?.Invoke("Coke", 1);
