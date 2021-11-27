@@ -26,7 +26,7 @@ namespace BasuraWaterWheel
 
         
         
-        /*void OnGUI()
+        void OnGUI()
         {
             GUIStyle guiStyle = new GUIStyle();
             guiStyle.normal.background = Texture2D.grayTexture;
@@ -70,7 +70,20 @@ namespace BasuraWaterWheel
             }
             GUILayout.EndVertical();
             GUILayout.EndHorizontal();
-        }*/
+        }
+
+        public void collecteJunk()
+        {
+            String s = "";
+            foreach (var junkPart in _collectedDebris)
+            {
+                s += debrisPrefabs[junkPart.Key].name + ": " + _collectedDebris[junkPart.Key] + "\n";
+            }
+            Debug.Log("CollectedJUnk" + s);
+
+        }
+            
+
         
         
         
