@@ -28,7 +28,7 @@ namespace BasuraWaterWheel
 
         public void CreateBottle(string bottleType) {
             for (int i = 0; i < bottlePrefabs.Length; i++) {
-                if(debrisPrefabs[i].name == bottleType) {
+                if(bottlePrefabs[i].name == bottleType) {
                     CreateDebris(i);
                     break;
                 }
