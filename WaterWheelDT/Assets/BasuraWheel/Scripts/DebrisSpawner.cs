@@ -29,7 +29,7 @@ namespace BasuraWaterWheel
         public void CreateBottle(string bottleType) {
             for (int i = 0; i < bottlePrefabs.Length; i++) {
                 if(bottlePrefabs[i].name == bottleType) {
-                    CreateDebris(i);
+                    CreateBottle(i);
                     break;
                 }
             }
@@ -91,11 +91,7 @@ namespace BasuraWaterWheel
             Debug.Log("CollectedJUnk" + s);
 
         }
-            
 
-        
-        
-        
         private void Awake()
         {
             _weights = new float[debrisPrefabs.Length];
@@ -151,7 +147,18 @@ namespace BasuraWaterWheel
 
             return debris;
         }
-        
+
+        private Debris CreateBottle(int prefabIndex) {
+            var debris = Instantiate(bottlePrefabs[prefabIndex], Vector3.zero, Quaternion.identity);
+
+            debris.transform.localScale = debris.gameObject.transform.localScale * transform.parent.transform.localScale.x;
+
+            debris.poolID = prefabIndex + 100;
+            debris.followRoute.SetRoute(routes);
+
+            return debris;
+        }
+
         private void SpawnDebris()
         {
             int id = WeightedRandomExtension.GetRandomWeightedID(_weights);
@@ -176,6 +183,10 @@ namespace BasuraWaterWheel
         private void OnDebrisCollected(GameObject go)
         {
             var debris = go.GetComponent<Debris>();
+            if(debris.poolID >= 100) {
+                Destroy(debris);
+                return;
+            }
             debris.gameObject.transform.rotation = Quaternion.Euler(Vector3.zero);
             debris.followRoute.OnRoutesFinished -= OnDebrisCollected;
             _objectPools[debris.poolID].Release(debris);
