@@ -1239,67 +1239,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533010138}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &639115162
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 746878167725092285, guid: 4a336fe47b9d16a438498fb121d0db68, type: 3}
-      propertyPath: debrisSpawner
-      value: 
-      objectReference: {fileID: 2903323318057185618}
-    - target: {fileID: 746878168238700233, guid: 4a336fe47b9d16a438498fb121d0db68, type: 3}
-      propertyPath: m_Name
-      value: SignalR
-      objectReference: {fileID: 0}
-    - target: {fileID: 746878168238700239, guid: 4a336fe47b9d16a438498fb121d0db68, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 746878168238700239, guid: 4a336fe47b9d16a438498fb121d0db68, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 746878168238700239, guid: 4a336fe47b9d16a438498fb121d0db68, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 746878168238700239, guid: 4a336fe47b9d16a438498fb121d0db68, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 746878168238700239, guid: 4a336fe47b9d16a438498fb121d0db68, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 746878168238700239, guid: 4a336fe47b9d16a438498fb121d0db68, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 746878168238700239, guid: 4a336fe47b9d16a438498fb121d0db68, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 746878168238700239, guid: 4a336fe47b9d16a438498fb121d0db68, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 746878168238700239, guid: 4a336fe47b9d16a438498fb121d0db68, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 746878168238700239, guid: 4a336fe47b9d16a438498fb121d0db68, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 746878168238700239, guid: 4a336fe47b9d16a438498fb121d0db68, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4a336fe47b9d16a438498fb121d0db68, type: 3}
 --- !u!1 &730956278
 GameObject:
   m_ObjectHideFlags: 0
@@ -4472,6 +4411,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: DebrisSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 2903323317200665383, guid: b8d9e5982a8467a41badb3c3cb7eab47, type: 3}
+      propertyPath: debrisPrefabs.Array.size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903323317200665383, guid: b8d9e5982a8467a41badb3c3cb7eab47, type: 3}
+      propertyPath: debrisPrefabs.Array.data[17]
+      value: 
+      objectReference: {fileID: 8181954130792955665, guid: b234f8d402329dd44ae0958b3c96b5d6, type: 3}
+    - target: {fileID: 2903323317200665383, guid: b8d9e5982a8467a41badb3c3cb7eab47, type: 3}
+      propertyPath: debrisPrefabs.Array.data[18]
+      value: 
+      objectReference: {fileID: 8395965873887185276, guid: f82b9d3ff97384d4493aa2e1fa024a57, type: 3}
+    - target: {fileID: 2903323317200665383, guid: b8d9e5982a8467a41badb3c3cb7eab47, type: 3}
+      propertyPath: debrisPrefabs.Array.data[19]
+      value: 
+      objectReference: {fileID: 6249937756916163720, guid: 0f988248325b694408c7ce713ba551c4, type: 3}
     - target: {fileID: 8835296499858291373, guid: b8d9e5982a8467a41badb3c3cb7eab47, type: 3}
       propertyPath: m_RootOrder
       value: 2

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class controller : MonoBehaviour
+public class ChartController : MonoBehaviour
 {
     public GameObject diagramm;
 
@@ -10,5 +10,4 @@ public class controller : MonoBehaviour
     {
         diagramm.SetActive(true);
     }
-
 }
