@@ -32,43 +32,28 @@ namespace DigitalTwin {
 
         public void Start()
         {
-            while (true)
-            {
-                SpawnCoke();
-                SpawnSprite();
-                SpawnPepsi();
-
-            }
-
+            StartCoroutine(SpawnBottles());
         }
 
-        private IEnumerator SpawnCoke()
+        private IEnumerator SpawnBottles()
         {
             while (true)
             {
-                //Instantiate(baseball);
-                onNewBottleRecognized?.Invoke("Coke", 1);
-                yield return new WaitForSeconds(2);
-            }
-        }
-
-        private IEnumerator SpawnSprite()
-        {
-            while (true)
-            {
-                //Instantiate(baseball);
-                onNewBottleRecognized?.Invoke("Sprite", 1);
-                yield return new WaitForSeconds(2);
-            }
-        }
-
-        private IEnumerator SpawnPepsi()
-        {
-            while (true)
-            {
-                //Instantiate(baseball);
-                onNewBottleRecognized?.Invoke("Pepsi", 1);
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(UnityEngine.Random.Range(1f, 5f));
+                int i = UnityEngine.Random.Range(0, 3);
+                switch (i) {
+                    case 0:
+                        onNewBottleRecognized?.Invoke("Coke", 1);
+                        break;
+                    case 1:
+                        onNewBottleRecognized?.Invoke("Sprite", 1);
+                        break;
+                    case 2:
+                        onNewBottleRecognized?.Invoke("Pepsi", 1);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }
