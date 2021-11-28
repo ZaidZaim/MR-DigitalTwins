@@ -16,6 +16,8 @@ namespace BasuraWaterWheel
     {
         [SerializeField] private Transform[] routes;
         [SerializeField] private Debris[] debrisPrefabs;
+        [SerializeField] private Debris[] bottlePrefabs;
+
         [SerializeField] private float interval = 1f;
 
         private ObjectPool<Debris>[] _objectPools;
@@ -25,8 +27,8 @@ namespace BasuraWaterWheel
         private bool _initialized = false;
 
         public void CreateBottle(string bottleType) {
-            for (int i = 0; i < debrisPrefabs.Length; i++) {
-                if(debrisPrefabs[i].name == bottleType) {
+            for (int i = 0; i < bottlePrefabs.Length; i++) {
+                if(bottlePrefabs[i].name == bottleType) {
                     CreateDebris(i);
                     break;
                 }
