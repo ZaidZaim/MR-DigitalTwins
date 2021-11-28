@@ -479,6 +479,51 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &98766049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 98766050}
+  - component: {fileID: 98766051}
+  m_Layer: 0
+  m_Name: BottleSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &98766050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98766049}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 953678529}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &98766051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98766049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef6fb192f766c8440a5be8d44dde7c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataReceiver: {fileID: 1991295703}
+  debrisSpawner: {fileID: 2903323318057185618}
 --- !u!1 &116021243 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a6e4cf0b519a4364ba003d6c00933ec8, type: 3}
@@ -1965,6 +2010,7 @@ Transform:
   - {fileID: 882732534}
   - {fileID: 227901443}
   - {fileID: 61930773}
+  - {fileID: 98766050}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4361,6 +4407,17 @@ PrefabInstance:
     - {fileID: 2722341311205244856, guid: b8d9e5982a8467a41badb3c3cb7eab47, type: 3}
     - {fileID: 2442225682956194956, guid: b8d9e5982a8467a41badb3c3cb7eab47, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b8d9e5982a8467a41badb3c3cb7eab47, type: 3}
+--- !u!114 &2903323318057185618 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2903323317200665383, guid: b8d9e5982a8467a41badb3c3cb7eab47, type: 3}
+  m_PrefabInstance: {fileID: 2903323318057185617}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7aa0ac727e206f4c8b9f35c5b016fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4828231986611299458
 Transform:
   m_ObjectHideFlags: 0
