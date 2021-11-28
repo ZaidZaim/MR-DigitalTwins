@@ -29,5 +29,47 @@ namespace DigitalTwin {
         public void FakeEventPepsi() {
             onNewBottleRecognized?.Invoke("Pepsi", 1);
         }
+
+        public void Start()
+        {
+            while (true)
+            {
+                SpawnCoke();
+                SpawnSprite();
+                SpawnPepsi();
+
+            }
+
+        }
+
+        private IEnumerator SpawnCoke()
+        {
+            while (true)
+            {
+                //Instantiate(baseball);
+                onNewBottleRecognized?.Invoke("Coke", 1);
+                yield return new WaitForSeconds(2);
+            }
+        }
+
+        private IEnumerator SpawnSprite()
+        {
+            while (true)
+            {
+                //Instantiate(baseball);
+                onNewBottleRecognized?.Invoke("Sprite", 1);
+                yield return new WaitForSeconds(2);
+            }
+        }
+
+        private IEnumerator SpawnPepsi()
+        {
+            while (true)
+            {
+                //Instantiate(baseball);
+                onNewBottleRecognized?.Invoke("Pepsi", 1);
+                yield return new WaitForSeconds(2);
+            }
+        }
     }
 }
