@@ -10,10 +10,6 @@ public class BottleSpawner : MonoBehaviour
     [SerializeField] DataReceiver dataReceiver;
     [SerializeField] DebrisSpawner debrisSpawner;
 
-    [SerializeField] GameObject cokePrefab;
-    [SerializeField] GameObject pepsiPreab;
-    [SerializeField] GameObject spritePrefab;
-
     private void Start() {
         dataReceiver.onNewBottleRecognized += SpawnBottle;
     }
