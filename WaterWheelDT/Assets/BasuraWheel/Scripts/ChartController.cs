@@ -23,7 +23,7 @@ public class ChartController : MonoBehaviour
         if (CokeBar.transform.localScale.y <= maxy)
         {
 
-            CokeBar.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y +0.2f,transform.localScale.z);
+            CokeBar.transform.localScale = new Vector3(CokeBar.transform.localScale.x, CokeBar.transform.localScale.y +0.2f, CokeBar.transform.localScale.z);
 
         }
 
@@ -31,10 +31,10 @@ public class ChartController : MonoBehaviour
     public void ScaleBarSprite()
     {
         float maxy = 1.3f;
-        if (CokeBar.transform.localScale.y <= maxy)
+        if (SpriteBar.transform.localScale.y <= maxy)
         {
 
-            SpriteBar.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + 0.2f, transform.localScale.z);
+            SpriteBar.transform.localScale = new Vector3(SpriteBar.transform.localScale.x, SpriteBar.transform.localScale.y + 0.2f, SpriteBar.transform.localScale.z);
 
         }
 
@@ -45,10 +45,10 @@ public class ChartController : MonoBehaviour
     public void ScaleBarPepsi()
     {
         float maxy = 1.3f;
-        if (CokeBar.transform.localScale.y <= maxy)
+        if (PepsiBar.transform.localScale.y <= maxy)
         {
 
-            PepsiBar.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + 0.2f, transform.localScale.z);
+            PepsiBar.transform.localScale = new Vector3(PepsiBar.transform.localScale.x, PepsiBar.transform.localScale.y + 0.2f, PepsiBar.transform.localScale.z);
 
         }
         
