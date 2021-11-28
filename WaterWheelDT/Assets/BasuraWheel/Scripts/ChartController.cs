@@ -23,24 +23,35 @@ public class ChartController : MonoBehaviour
         if (CokeBar.transform.localScale.y <= maxy)
         {
 
-            CokeBar.transform.localScale = new Vector3(transform.localScale.y, 0.2f);
+            CokeBar.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y +0.2f,transform.localScale.z);
 
-        }
-        else
-        {
-            
         }
 
     }
     public void ScaleBarSprite()
     {
-        SpriteBar.transform.localScale = new Vector3(transform.localScale.y,0.2f);
+        float maxy = 1.3f;
+        if (CokeBar.transform.localScale.y <= maxy)
+        {
+
+            SpriteBar.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + 0.2f, transform.localScale.z);
+
+        }
+
+        
 
     }
 
     public void ScaleBarPepsi()
     {
-        PepsiBar.transform.localScale = new Vector3(transform.localScale.y,0.2f);
+        float maxy = 1.3f;
+        if (CokeBar.transform.localScale.y <= maxy)
+        {
+
+            PepsiBar.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + 0.2f, transform.localScale.z);
+
+        }
+        
 
     }
 }

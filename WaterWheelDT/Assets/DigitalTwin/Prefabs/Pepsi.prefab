@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4871480154304281721}
   - component: {fileID: 7241240825311201459}
   - component: {fileID: 8395965873887185276}
+  - component: {fileID: 9087159188932358608}
   m_Layer: 0
   m_Name: Pepsi
   m_TagString: Pepsi
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b823888e9dd3f4d45a17fefb5ee82c49, type: 2}
+  - {fileID: 2100000, guid: 626d570bfea4b6845ba5214656f5dc77, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -102,3 +103,17 @@ MonoBehaviour:
   isCollectable: 1
   poolID: 0
   followRoute: {fileID: 0}
+--- !u!136 &9087159188932358608
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9187046758295054694}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.1125541
+  m_Height: 0.6449747
+  m_Direction: 1
+  m_Center: {x: 0.0000000037252903, y: 0.19225879, z: -0.00000008195639}

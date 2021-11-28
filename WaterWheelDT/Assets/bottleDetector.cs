@@ -7,7 +7,7 @@ public class bottleDetector : MonoBehaviour
     public int counterCoke = 0;
     public int counterSprite= 0;
     public int counterPepsi= 0;
-    ChartController scaleBars;
+    public ChartController scaleBars;
 
     void OnTriggerEnter(Collider targetObj)
     {
