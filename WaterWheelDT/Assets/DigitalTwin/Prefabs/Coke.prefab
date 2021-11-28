@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5085317109375224340}
   - component: {fileID: 7022901541213716190}
   - component: {fileID: 8181954130792955665}
+  - component: {fileID: 5997156668731460278}
   m_Layer: 0
   m_Name: Coke
-  m_TagString: Untagged
+  m_TagString: Coke
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b823888e9dd3f4d45a17fefb5ee82c49, type: 2}
+  - {fileID: 2100000, guid: a751e78e5bea4aa4d98cd7ae42b2cfe5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -102,3 +103,17 @@ MonoBehaviour:
   isCollectable: 1
   poolID: 0
   followRoute: {fileID: 0}
+--- !u!136 &5997156668731460278
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8824425023591259915}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.1125541
+  m_Height: 0.6449747
+  m_Direction: 1
+  m_Center: {x: 0.0000000037252903, y: 0.19225879, z: -0.00000008195639}

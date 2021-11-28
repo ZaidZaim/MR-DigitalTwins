@@ -8,7 +8,8 @@ namespace BasuraWaterWheel
 {
     public class AnimationSpeedController : MonoBehaviour
     {
-        [SerializeField] private float speedModifier = 1f;
+
+        public float speedModifier = 1f;
         private AnimationSpeed[] _animationSpeeds;
         private Route[] _routeSpeeds;
 
@@ -20,8 +21,13 @@ namespace BasuraWaterWheel
             GUILayout.BeginVertical(guiStyle, GUILayout.Height(Screen.height), GUILayout.Width(160));
             GUILayout.FlexibleSpace();
             GUILayout.Label("Water Speed: " + speedModifier);
-            speedModifier = GUILayout.HorizontalSlider(speedModifier, 0f, 4f);
+            //speedModifier = GUILayout.HorizontalSlider(speedModifier, 0f, 4f);
             GUILayout.EndVertical();
+        }
+
+        public void WaterSpeed()
+        {
+            speedModifier++;
         }
         
         void Start()

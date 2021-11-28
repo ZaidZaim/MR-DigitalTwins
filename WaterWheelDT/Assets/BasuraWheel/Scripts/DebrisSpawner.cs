@@ -16,6 +16,8 @@ namespace BasuraWaterWheel
     {
         [SerializeField] private Transform[] routes;
         [SerializeField] private Debris[] debrisPrefabs;
+        [SerializeField] private Debris[] bottlePrefabs;
+
         [SerializeField] private float interval = 1f;
 
         private ObjectPool<Debris>[] _objectPools;
@@ -25,9 +27,9 @@ namespace BasuraWaterWheel
         private bool _initialized = false;
 
         public void CreateBottle(string bottleType) {
-            for (int i = 0; i < debrisPrefabs.Length; i++) {
-                if(debrisPrefabs[i].name == bottleType) {
-                    CreateDebris(i);
+            for (int i = 0; i < bottlePrefabs.Length; i++) {
+                if(bottlePrefabs[i].name == bottleType) {
+                    CreateBottle(i);
                     break;
                 }
             }
@@ -78,9 +80,18 @@ namespace BasuraWaterWheel
             GUILayout.EndVertical();
             GUILayout.EndHorizontal();
         }
-        
-        
-        
+
+        public void collecteJunk()
+        {
+            String s = "";
+            foreach (var junkPart in _collectedDebris)
+            {
+                s += debrisPrefabs[junkPart.Key].name + ": " + _collectedDebris[junkPart.Key] + "\n";
+            }
+            Debug.Log("CollectedJUnk" + s);
+
+        }
+
         private void Awake()
         {
             _weights = new float[debrisPrefabs.Length];
@@ -136,7 +147,18 @@ namespace BasuraWaterWheel
 
             return debris;
         }
-        
+
+        private Debris CreateBottle(int prefabIndex) {
+            var debris = Instantiate(bottlePrefabs[prefabIndex], Vector3.zero, Quaternion.identity);
+
+            debris.transform.localScale = debris.gameObject.transform.localScale * transform.parent.transform.localScale.x;
+
+            debris.poolID = prefabIndex + 100;
+            debris.followRoute.SetRoute(routes);
+
+            return debris;
+        }
+
         private void SpawnDebris()
         {
             int id = WeightedRandomExtension.GetRandomWeightedID(_weights);
@@ -148,10 +170,13 @@ namespace BasuraWaterWheel
                 Random.Range(debris.rotationOffsetMin.z, debris.rotationOffsetMax.z)
             ));
 
+            debris.gameObject.transform.localScale = debris.gameObject.transform.localScale * transform.parent.transform.localScale.x;
+
             debris.followRoute.SetOffset(new Vector3(
-                Random.Range(debris.offsetMin.x, debris.offsetMax.x),
-                Random.Range(debris.offsetMin.y, debris.offsetMax.y),
-                Random.Range(debris.offsetMin.z, debris.offsetMax.z)
+                Random.Range(debris.offsetMin.x * transform.parent.transform.localScale.x, debris.offsetMax.x * transform.parent.transform.localScale.x),
+                Random.Range(debris.offsetMin.y * transform.parent.transform.localScale.x, debris.offsetMax.y * transform.parent.transform.localScale.x),
+                Random.Range(debris.offsetMin.z * transform.parent.transform.localScale.x, debris.offsetMax.z * transform.parent.transform.localScale.x)
+
             ));
             debris.followRoute.OnRoutesFinished += OnDebrisCollected;
         }
@@ -159,6 +184,10 @@ namespace BasuraWaterWheel
         private void OnDebrisCollected(GameObject go)
         {
             var debris = go.GetComponent<Debris>();
+            if(debris.poolID >= 100) {
+                Destroy(debris);
+                return;
+            }
             debris.gameObject.transform.rotation = Quaternion.Euler(Vector3.zero);
             debris.followRoute.OnRoutesFinished -= OnDebrisCollected;
             _objectPools[debris.poolID].Release(debris);

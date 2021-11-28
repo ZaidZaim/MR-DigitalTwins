@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7035381692784759181}
   - component: {fileID: 5063810792011867463}
   - component: {fileID: 6249937756916163720}
+  - component: {fileID: 4323508539011326291}
   m_Layer: 0
   m_Name: Sprite
-  m_TagString: Untagged
+  m_TagString: Sprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32ea01b8a86177f4caa388bb58c06055, type: 2}
+  - {fileID: 2100000, guid: 6e7a6ecf01cc64a468ad1cc5b13d5f83, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -102,3 +103,17 @@ MonoBehaviour:
   isCollectable: 1
   poolID: 0
   followRoute: {fileID: 0}
+--- !u!136 &4323508539011326291
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6721263342658749586}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.1125541
+  m_Height: 0.6449747
+  m_Direction: 1
+  m_Center: {x: 0.0000000037252903, y: 0.19225879, z: -0.00000008195639}
