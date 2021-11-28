@@ -161,10 +161,12 @@ namespace BasuraWaterWheel
                 Random.Range(debris.rotationOffsetMin.z, debris.rotationOffsetMax.z)
             ));
 
+            debris.gameObject.transform.localScale = new Vector3(transform.parent.transform.localScale.x, transform.parent.transform.localScale.y, transform.parent.transform.localScale.z);
+
             debris.followRoute.SetOffset(new Vector3(
-                Random.Range(debris.offsetMin.x, debris.offsetMax.x),
-                Random.Range(debris.offsetMin.y, debris.offsetMax.y),
-                Random.Range(debris.offsetMin.z, debris.offsetMax.z)
+                Random.Range(debris.offsetMin.x * transform.parent.transform.localScale.x, debris.offsetMax.x * transform.parent.transform.localScale.x),
+                Random.Range(debris.offsetMin.y * transform.parent.transform.localScale.x, debris.offsetMax.y * transform.parent.transform.localScale.x),
+                Random.Range(debris.offsetMin.z * transform.parent.transform.localScale.x, debris.offsetMax.z * transform.parent.transform.localScale.x)
             ));
             debris.followRoute.OnRoutesFinished += OnDebrisCollected;
         }
