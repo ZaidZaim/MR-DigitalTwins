@@ -59,6 +59,7 @@ namespace BasuraWaterWheel
             GUILayout.Space(20);
             GUILayout.BeginVertical(guiStyle);
             GUILayout.Label("Collected Junk:");
+            
             String s = "";
             foreach (var junkPart in _collectedDebris)
             {
@@ -169,10 +170,13 @@ namespace BasuraWaterWheel
                 Random.Range(debris.rotationOffsetMin.z, debris.rotationOffsetMax.z)
             ));
 
+            debris.gameObject.transform.localScale = debris.gameObject.transform.localScale * transform.parent.transform.localScale.x;
+
             debris.followRoute.SetOffset(new Vector3(
-                Random.Range(debris.offsetMin.x, debris.offsetMax.x),
-                Random.Range(debris.offsetMin.y, debris.offsetMax.y),
-                Random.Range(debris.offsetMin.z, debris.offsetMax.z)
+                Random.Range(debris.offsetMin.x * transform.parent.transform.localScale.x, debris.offsetMax.x * transform.parent.transform.localScale.x),
+                Random.Range(debris.offsetMin.y * transform.parent.transform.localScale.x, debris.offsetMax.y * transform.parent.transform.localScale.x),
+                Random.Range(debris.offsetMin.z * transform.parent.transform.localScale.x, debris.offsetMax.z * transform.parent.transform.localScale.x)
+
             ));
             debris.followRoute.OnRoutesFinished += OnDebrisCollected;
         }
